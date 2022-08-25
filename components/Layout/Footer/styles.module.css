@@ -1,0 +1,4 @@
+.footer {
+    background-color: var(--color-gray-1);
+    border-top: var(--border-sm);
+}

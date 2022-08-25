@@ -1,0 +1,13 @@
+:root {
+    --padding-sm: 1rem;
+    --padding-base: 1.5rem;
+    --padding-lg: 2rem;
+
+    --box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --box-shadow-base: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --box-shadow-lg: 0 1px 6px rgba(0, 0, 0, 0.2);
+
+    --box-shadow-inner-sm: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    --box-shadow-inner-base: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    --box-shadow-inner-lg: inset 0 1px 6px rgba(0, 0, 0, 0.2);
+}
