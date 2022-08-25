@@ -1,8 +1,11 @@
 import styles from "./styles.module.css";
 import { Layout } from "antd";
+import Container from "../Container";
 
 export default function Content({ children }) {
-  const {Content} = Layout;
-
-  return <Content className={styles.content}>{children}</Content>;
+  return (
+    <Layout.Content className={styles.content}>
+      <Container>{children}</Container>
+    </Layout.Content>
+  );
 }
