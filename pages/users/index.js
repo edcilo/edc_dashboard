@@ -1,6 +1,6 @@
 import DashboardLayout from "../../layouts/DashboardLayout";
 
-export default function Home() {
+export default function UsersPage() {
   return (
     <div>
       <DashboardLayout>

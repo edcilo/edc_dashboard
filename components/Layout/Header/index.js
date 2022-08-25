@@ -4,7 +4,7 @@ import Link from "next/link";
 import { MenuOutlined } from "@ant-design/icons";
 import { Button, Layout } from "antd";
 
-export default function Header({ onMenuClick = () => {} }) {
+export default function Header({ onMenuClick = null }) {
   const imageSrc = "https://storage.edcilo.com/edcilo-logo-dark.svg";
 
   return (
@@ -20,7 +20,9 @@ export default function Header({ onMenuClick = () => {} }) {
           />
         </a>
       </Link>
-      <Button onClick={onMenuClick} icon={<MenuOutlined />}></Button>
+      {onMenuClick && (
+        <Button onClick={onMenuClick} icon={<MenuOutlined />}></Button>
+      )}
     </Layout.Header>
   );
 }
