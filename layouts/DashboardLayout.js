@@ -1,13 +1,22 @@
 import { useState } from "react";
 import { Layout } from "antd";
-import { Content, Footer, Header, Sidebar } from "../components/Layout";
+import {
+  Content,
+  Footer,
+  Header,
+  Sidebar,
+  UserCtrl,
+} from "../components/Layout";
 
-export default function DashboardLayout({ children }) {
+export default function DashboardLayout({ user, children }) {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
     <Layout>
-      <Header onMenuClick={() => setCollapsed(!collapsed)} />
+      <Header
+        userCtrl={<UserCtrl user={user} />}
+        onMenuClick={() => setCollapsed(!collapsed)}
+      />
       <Layout>
         <Sidebar collapsed={collapsed} />
         <Content>{children}</Content>

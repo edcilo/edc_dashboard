@@ -1,8 +1,9 @@
 import config from "../config";
 
 class Service {
-  constructor() {
+  constructor(token = null) {
     this.baseUrl = config.api_url;
+    this.token = token;
   }
 
   get prefix() {
@@ -10,6 +11,10 @@ class Service {
   }
 
   http(endpoint, { body, headers, ...params }) {
+    headers = {
+      Authorization: this.token ?? `Bearer ${this.token}`,
+      ...headers,
+    };
     return fetch(this.baseUrl + this.prefix + endpoint, {
       body: JSON.stringify(body),
       headers: {

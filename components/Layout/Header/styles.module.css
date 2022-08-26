@@ -9,4 +9,14 @@
     justify-content: space-between;
 }
 
+.logoLink {
+    display: flex;
+    align-items: center;
+}
+
 .logo {}
+
+.ctrls {
+    display: flex;
+    align-items: center;
+}

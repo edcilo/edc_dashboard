@@ -3,6 +3,7 @@ import Content from "./Content";
 import Footer from "./Footer";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
+import UserCtrl from "./UserCtrl";
 
 const Layout = {
   Container,
@@ -10,8 +11,9 @@ const Layout = {
   Footer,
   Header,
   Sidebar,
+  UserCtrl,
 };
 
-export { Container, Content, Footer, Header, Sidebar };
+export { Container, Content, Footer, Header, Sidebar, UserCtrl };
 
 export default Layout;
