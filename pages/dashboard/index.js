@@ -11,9 +11,9 @@ export default function HomePage({ user }) {
 }
 
 export async function getServerSideProps(context) {
-  const user = await ssprops_user(context);
+  const { user, token } = await ssprops_user(context);
 
   return {
-    props: { user },
+    props: { user, token },
   };
 }

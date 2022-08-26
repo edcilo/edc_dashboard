@@ -10,7 +10,7 @@ class Service {
     return "";
   }
 
-  http(endpoint, { body, headers, ...params }) {
+  async http(endpoint, { body, headers, ...params }) {
     headers = {
       Authorization: this.token ?? `Bearer ${this.token}`,
       ...headers,

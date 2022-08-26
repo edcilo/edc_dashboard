@@ -36,7 +36,7 @@ export default function UserCtrl({ user }) {
         placement="bottomRight"
         trigger="click"
         icon={<DownOutlined />}
-        onClick={() => console.log("go to profile")}
+        onClick={() => router.push("/dashboard/profile")}
       >
         {user?.name || user?.email}
       </Dropdown.Button>

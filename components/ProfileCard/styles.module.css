@@ -1,0 +1,31 @@
+.grid {
+    display: flex;
+}
+
+.section:first-child {
+    padding-right: var(--padding-sm);
+}
+
+.profileData div:first-child {
+    align-items: flex-start !important;
+}
+
+.username {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.email {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 0;
+    color: var(--color-gray-7)
+}
+
+.badge {
+    top: 1rem !important;
+    right: 1rem !important;
+    font-size: 1.5rem !important;
+}

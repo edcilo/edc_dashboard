@@ -1,14 +1,14 @@
-import { Button, Input, Typography } from "antd";
+import { Button, Input } from "antd";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormItem from "../FormItem";
 
-const LoginSchema = Yup.object().shape({
+const schema = Yup.object().shape({
   username: Yup.string().email().required("E-mail is required"),
   password: Yup.string().required("Password is required"),
 });
 
-export default function Login({ loading, onSubmit }) {
+export default function LoginForm({ loading, onSubmit }) {
   const initialValues = {
     username: "",
     password: "",
@@ -17,7 +17,7 @@ export default function Login({ loading, onSubmit }) {
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={LoginSchema}
+      validationSchema={schema}
       onSubmit={onSubmit}
     >
       {({ values, errors, touched, getFieldProps }) => (

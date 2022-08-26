@@ -1,5 +1,5 @@
 import { validate } from "./jwt";
-import User from "../services/user";
+import Account from "../services/account";
 
 export default async function ssprops_user({ req }) {
   const { cookies } = req;
@@ -9,12 +9,12 @@ export default async function ssprops_user({ req }) {
   let user = null;
 
   try {
-    const userService = new User(token);
+    const userService = new Account(token);
     const { data } = await userService.profile(payload.id);
     user = data;
   } catch (error) {
     console.log(error);
   }
 
-  return user;
+  return { user, token };
 }
