@@ -4,8 +4,8 @@ const nextConfig = {
   swcMinify: true,
 
   images: {
-    domains: ['storage.edcilo.com'],
-  }
-}
+    domains: ["storage.edcilo.com"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

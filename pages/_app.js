@@ -1,6 +1,7 @@
 import "../styles/vars/box.css";
 import "../styles/vars/borders.css";
 import "../styles/vars/colors.css";
+import "../styles/vars/fonts.css";
 import "../styles/globals.css";
 import "antd/dist/antd.css";
 

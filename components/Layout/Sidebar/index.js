@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import { AppstoreOutlined, KeyOutlined, UserOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 
@@ -10,11 +10,11 @@ const items = [
     icon: <UserOutlined />,
     children: [
       {
-        key: "/users",
+        key: "/dashboard/users",
         label: "List",
       },
       {
-        key: "/users-archived",
+        key: "/dashboard/users-archived",
         label: "Archived",
       },
     ],
@@ -25,7 +25,7 @@ const items = [
     icon: <AppstoreOutlined />,
     children: [
       {
-        key: "/apps",
+        key: "/dashboard/apps",
         label: "List",
       },
     ],
@@ -36,11 +36,11 @@ const items = [
     icon: <KeyOutlined />,
     children: [
       {
-        key: "/roles",
+        key: "/dashboard/roles",
         label: "Roles",
       },
       {
-        key: "/permissions",
+        key: "/dashboard/permissions",
         label: "Permissions",
       },
     ],
@@ -48,9 +48,10 @@ const items = [
 ];
 
 export default function Sidebar({ collapsed }) {
+  const router = useRouter();
+
   const clickHandler = (item) => {
-    Router.push(item.key);
-    console.log("????", item);
+    router.push(item.key);
   };
 
   return (

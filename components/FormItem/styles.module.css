@@ -1,0 +1,8 @@
+.formItem {
+    margin-bottom: var(--margin-lg);
+}
+
+.message {
+    position: absolute;
+    font-size: var(--font-small)
+}

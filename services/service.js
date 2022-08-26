@@ -1,6 +1,8 @@
+import config from "../config";
+
 class Service {
   constructor() {
-    this.baseUrl = process.env.NEXT_PUBLIC_API_HOST;
+    this.baseUrl = config.api_url;
   }
 
   get prefix() {
@@ -15,12 +17,26 @@ class Service {
         ...headers,
       },
       ...params,
-    }).then((response) =>
-      response.json().then((data) => ({
-        data: data,
-        status: response.status,
-      }))
-    );
+    }).then((response) => {
+      if (!response.ok) {
+        return response.json().then((data) => {
+          throw {
+            status: response.status,
+            statusText: response.statusText,
+            data,
+          };
+        });
+      }
+
+      if (response.status == 204) {
+        return response;
+      } else {
+        return response.json().then((data) => ({
+          data: data,
+          status: response.status,
+        }));
+      }
+    });
   }
 }
 

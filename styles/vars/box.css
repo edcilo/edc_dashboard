@@ -1,4 +1,8 @@
 :root {
+    --margin-sm: 1rem;
+    --margin-base: 1.5rem;
+    --margin-lg: 2rem;
+
     --padding-sm: 1rem;
     --padding-base: 1.5rem;
     --padding-lg: 2rem;
