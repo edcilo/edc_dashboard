@@ -7,16 +7,16 @@ const items = [
   { label: "Password", key: "password" },
 ];
 
-const menuHandler = (item, routes) => {
+const menuHandler = (item, router) => {
   if (item.key === "account") {
-    routes.push("/dashboard/profile/account");
+    router.push("/dashboard/profile/account");
   } else if (item.key === "password") {
-    routes.push("/dashboard/profile/password");
+    router.push("/dashboard/profile/password");
   }
 };
 
 export default function AccountSettings({ user, children }) {
-  const routes = useRouter();
+  const router = useRouter();
 
   return (
     <Card>
@@ -28,7 +28,7 @@ export default function AccountSettings({ user, children }) {
           <Menu
             className={styles.menu}
             items={items}
-            onClick={(item) => menuHandler(item, routes)}
+            onClick={(item) => menuHandler(item, router)}
           />
         </Col>
       </Row>

@@ -4,12 +4,9 @@ import {
   CalendarOutlined,
   CheckCircleTwoTone,
   EditOutlined,
-  ManOutlined,
-  MinusOutlined,
   PhoneOutlined,
   UserOutlined,
   UserAddOutlined,
-  WomanOutlined,
 } from "@ant-design/icons";
 import { Avatar, Badge, Button, Card, Descriptions } from "antd";
 
@@ -23,10 +20,10 @@ const title = (user) => (
 );
 
 export default function ProfileCard({ user }) {
-  const routes = useRouter();
+  const router = useRouter();
 
   const created_at = new Date(user.created_at * 1000).toLocaleDateString(
-    routes.locale,
+    router.locale,
     {
       weekday: "long",
       year: "numeric",

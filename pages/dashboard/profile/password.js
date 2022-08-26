@@ -27,7 +27,7 @@ const errorsHandler = (status, data, setState) => {
 
 export default function PasswordPage({ user, token }) {
   const accountService = new Account(token);
-  const routes = useRouter();
+  const router = useRouter();
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -50,7 +50,7 @@ export default function PasswordPage({ user, token }) {
     <DashboardLayout user={user}>
       <PageHeader
         title="Settings"
-        onBack={() => routes.push("/dashboard/profile")}
+        onBack={() => router.push("/dashboard/profile")}
       />
       <AccountSettings>
         <Typography.Title level={3}>Update password</Typography.Title>
