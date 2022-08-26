@@ -49,7 +49,7 @@ export default function PasswordPage({ user, token }) {
   return (
     <DashboardLayout user={user}>
       <PageHeader
-        title="Password"
+        title="Settings"
         onBack={() => routes.push("/dashboard/profile")}
       />
       <AccountSettings>

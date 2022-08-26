@@ -1,6 +1,10 @@
 import { useRouter } from "next/router";
-import { DownOutlined, LogoutOutlined } from "@ant-design/icons";
-import { Button, Dropdown, Menu, message, Space, Tooltip } from "antd";
+import {
+  DownOutlined,
+  LogoutOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
+import { Dropdown, Menu } from "antd";
 import { ApiAuth } from "../../../services/auth";
 
 const handleMenuClick = (item, router) => {
@@ -10,6 +14,8 @@ const handleMenuClick = (item, router) => {
     apiAuth.logout().then(() => {
       router.push("/");
     });
+  } else if (item.key === "settings") {
+    router.push("/dashboard/profile/account");
   }
 };
 
@@ -17,6 +23,11 @@ const menu = (router) => (
   <Menu
     onClick={(item) => handleMenuClick(item, router)}
     items={[
+      {
+        label: "Settings",
+        key: "settings",
+        icon: <SettingOutlined />,
+      },
       {
         label: "Log Out",
         key: "logout",
