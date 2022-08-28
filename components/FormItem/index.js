@@ -11,7 +11,7 @@ export default function FormItem({
   return (
     <div className={styles.formItem}>
       <label htmlFor={htmlFor}>{label}</label>
-      {children}
+      <div className={styles.control}>{children}</div>
       <div className={styles.message}>
         {errors[htmlFor] && touched[htmlFor] && (
           <Typography.Text type="danger">{errors[htmlFor]}</Typography.Text>

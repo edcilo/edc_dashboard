@@ -1,4 +1,5 @@
 .formItem {
+    width: 100%;
     margin-bottom: var(--margin-lg);
 }
 

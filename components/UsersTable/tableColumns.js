@@ -1,5 +1,13 @@
+import Link from "next/link";
 import { format } from "date-fns";
-import { CheckCircleFilled, CloseCircleFilled } from "@ant-design/icons";
+import {
+  EditFilled,
+  EyeFilled,
+  CheckCircleFilled,
+  CloseCircleFilled,
+  SettingFilled,
+} from "@ant-design/icons";
+import { Button, Space } from "antd";
 
 const sortOrder = (column, order_column, order) => {
   const sort = order === "asc" ? "ascend" : "descend";
@@ -49,6 +57,22 @@ const getColumns = ({ order_column, order }) => [
     sortOrder: sortOrder("created_at", order_column, order),
     align: "center",
     render: (created_at) => format(new Date(created_at * 1000), "yyyy/MM/dd"),
+  },
+  {
+    title: <SettingFilled />,
+    dataIndex: "actions",
+    key: "actions",
+    align: "center",
+    render: (_, item) => (
+      <Space>
+        <Link href={`/dashboard/users/${item.id}`}>
+          <Button type="primary" href="" icon={<EyeFilled />} />
+        </Link>
+        <Link href={`/dashboard/users/${item.id}/edit`}>
+          <Button className="warning" href="" icon={<EditFilled />} />
+        </Link>
+      </Space>
+    ),
   },
 ];
 

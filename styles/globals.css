@@ -10,5 +10,39 @@ body {
   box-sizing: border-box;
 }
 
+.ant-btn.success {
+  color: var(--color-gray-2);
+  background-color: var(--color-green-6);
+  border-color: var(--color-green-6);
+}
+.ant-btn.success:hover,
+.ant-btn.success:focus {
+  color: var(--color-gray-1);
+  background-color: var(--color-green-5);
+  border-color: var(--color-green-5);
+}
+.ant-btn.success:active {
+  color: var(--color-gray-2);
+  background-color: var(--color-green-7);
+  border-color: var(--color-green-7);
+}
+
+.ant-btn.warning {
+  color: var(--color-gray-10);
+  background-color: var(--color-yellow-5);
+  border-color: var(--color-yellow-5);
+}
+.ant-btn.warning:hover,
+.ant-btn.warning:focus {
+  color: var(--color-gray-8);
+  background-color: var(--color-yellow-4);
+  border-color: var(--color-yellow-4);
+}
+.ant-btn.warning:active {
+  color: var(--color-gray-10);
+  background-color: var(--color-yellow-6);
+  border-color: var(--color-yellow-6);
+}
+
 @media (prefers-color-scheme: dark) {
 }

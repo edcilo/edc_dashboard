@@ -12,4 +12,26 @@
     --color-gray-11: #1f1f1f;
     --color-gray-12: #141414;
     --color-gray-13: #000000;
+
+    --color-yellow-1: #fffbe6;
+    --color-yellow-2: #fff1b8;
+    --color-yellow-3: #ffe58f;
+    --color-yellow-4: #ffd95b;
+    --color-yellow-5: #ffc53d;
+    --color-yellow-6: #faad14;
+    --color-yellow-7: #d48806;
+    --color-yellow-8: #ad6800;
+    --color-yellow-9: #8a4b00;
+    --color-yellow-10: #613400;
+
+    --color-green-1: #f6ffed;
+    --color-green-2: #d9f7be;
+    --color-green-3: #b7eb8f;
+    --color-green-4: #95de64;
+    --color-green-5: #73d13d;
+    --color-green-6: #52c41a;
+    --color-green-7: #389e0d;
+    --color-green-8: #237804;
+    --color-green-9: #135200;
+    --color-green-10: #092b00;
 }

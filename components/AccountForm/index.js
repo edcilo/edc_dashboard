@@ -23,7 +23,7 @@ export default function AccountForm({ data, submitErrors, loading, onSubmit }) {
       validationSchema={schema}
       onSubmit={onSubmit}
     >
-      {({ values, errors, touched, getFieldProps }) => (
+      {({ errors, touched, getFieldProps }) => (
         <Form>
           <FormItem
             label="Name"

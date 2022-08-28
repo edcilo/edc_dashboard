@@ -1,7 +1,9 @@
 import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
-import { Input, PageHeader, Table } from "antd";
+import { PlusCircleFilled } from "@ant-design/icons";
+import { Button, Input, PageHeader, Table } from "antd";
 import getColumns from "./tableColumns";
 
 export default function UsersTable({ users }) {
@@ -74,13 +76,20 @@ export default function UsersTable({ users }) {
       <PageHeader
         title="Users"
         extra={
-          <Input.Search
-            className={styles.search}
-            value={params.q}
-            placeholder="Search"
-            onChange={(e) => setParams({ ...params, q: e.target.value })}
-            onSearch={searchHandler}
-          />
+          <>
+            <Link href="/dashboard/users/new">
+              <Button href="" icon={<PlusCircleFilled />} className="success">
+                New User
+              </Button>
+            </Link>
+            <Input.Search
+              className={styles.search}
+              value={params.q}
+              placeholder="Search"
+              onChange={(e) => setParams({ ...params, q: e.target.value })}
+              onSearch={searchHandler}
+            />
+          </>
         }
       />
 
