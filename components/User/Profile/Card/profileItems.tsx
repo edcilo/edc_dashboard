@@ -5,7 +5,7 @@ import {
 } from "@ant-design/icons";
 import { format } from "date-fns";
 import { IUser } from "@/interfaces";
-import { IProfileItem } from "./interfaces";
+import { IProfileItem } from "@/interfaces/user";
 
 const profileItems = (user: IUser): IProfileItem[] => [
   {

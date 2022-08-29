@@ -1,9 +1,9 @@
 import styles from "./styles.module.css";
 import { CheckCircleTwoTone, UserOutlined } from "@ant-design/icons";
 import { Avatar, Badge } from "antd";
-import { ProfileProps } from "./types";
+import { IProfileProps } from "@/interfaces/user";
 
-export default function ProfileBadge({ user }: ProfileProps): JSX.Element {
+export default function ProfileBadge({ user }: IProfileProps): JSX.Element {
   return (
     <Badge
       count={

@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 import { Alert, Card, Space } from "antd";
 import { ApiAuth } from "../services/auth";
 import BasicLayout from "../layouts/BasicLayout";
-import LoginForm from "../components/LoginForm";
-import { Container } from "../components/Layout";
+import LoginForm from "@/components/User/LoginForm";
+import { Container } from "@/components/Layout";
 
 export default function LoginPage() {
   const auth = new ApiAuth();
@@ -19,7 +19,6 @@ export default function LoginPage() {
     auth
       .login(data)
       .then((response) => {
-        console.log("response", response);
         router.push("/dashboard");
       })
       .catch(({ status, data }) => {

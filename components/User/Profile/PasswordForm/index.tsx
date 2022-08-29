@@ -2,7 +2,8 @@ import { SaveOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import FormItem from "../FormItem";
+import FormItem from "@/components/FormItem";
+import { IPasswordProps } from "@/interfaces/user";
 
 const schema = Yup.object().shape({
   current_password: Yup.string().required("Current password is required"),
@@ -12,7 +13,11 @@ const schema = Yup.object().shape({
   ),
 });
 
-export default function PasswordForm({ submitErrors, loading, onSubmit }) {
+export default function PasswordForm({
+  submitErrors,
+  loading,
+  onSubmit,
+}: IPasswordProps): JSX.Element {
   const initialValues = {
     current_password: "",
     password: "",

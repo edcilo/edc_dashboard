@@ -1,7 +1,7 @@
 import * as jose from "jose";
-import appConfig from "../config";
+import appConfig from "@/config";
 
-const validate = async (token) => {
+const validate = async (token: string): Promise<null | jose.JWTPayload> => {
   if (!token) {
     return null;
   }

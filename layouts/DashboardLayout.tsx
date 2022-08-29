@@ -6,9 +6,13 @@ import {
   Header,
   Sidebar,
   UserCtrl,
-} from "../components/Layout";
+} from "@/components/Layout";
+import { IDasboardLayoutProps } from "@/interfaces/layouts";
 
-export default function DashboardLayout({ user, children }) {
+export default function DashboardLayout({
+  user,
+  children,
+}: IDasboardLayoutProps): JSX.Element {
   const [collapsed, setCollapsed] = useState(false);
 
   return (

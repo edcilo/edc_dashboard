@@ -2,7 +2,8 @@ import { SaveOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import FormItem from "../FormItem";
+import FormItem from "@/components/FormItem";
+import { IAccountProps } from "@/interfaces/user";
 
 const schema = Yup.object().shape({
   name: Yup.string().max(255),
@@ -10,11 +11,16 @@ const schema = Yup.object().shape({
   second_lastname: Yup.string().max(255),
 });
 
-export default function AccountForm({ data, submitErrors, loading, onSubmit }) {
+export default function AccountForm({
+  data,
+  submitErrors,
+  loading,
+  onSubmit,
+}: IAccountProps): JSX.Element {
   const initialValues = {
-    name: data?.name || "",
-    lastname: data?.lastname || "",
-    second_lastname: data?.second_lastname || "",
+    name: data.name || "",
+    lastname: data.lastname || "",
+    second_lastname: data.second_lastname || "",
   };
 
   return (

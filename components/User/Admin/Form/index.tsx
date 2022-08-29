@@ -2,7 +2,8 @@ import { SaveOutlined } from "@ant-design/icons";
 import { Button, Input, Select } from "antd";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import FormItem from "../../FormItem";
+import FormItem from "@/components/FormItem";
+import { INewUserProps } from "@/interfaces/user";
 
 const schema = Yup.object().shape({
   email: Yup.string().email().required("Email is required"),
@@ -20,7 +21,7 @@ export default function UserForm({
   submitErrors,
   loading,
   onSubmit,
-}) {
+}: INewUserProps): JSX.Element {
   const initialValues = {
     email: data?.email || "test+00@example.com",
     phone: data?.phone || "0000000009",
@@ -56,11 +57,7 @@ export default function UserForm({
               }
             >
               {roles.map((role) => (
-                <Select.Option
-                  key={`role-${role.id}`}
-                  value={role.id}
-                  // selected={values.role_id === role.id}
-                >
+                <Select.Option key={`role-${role.id}`} value={role.id}>
                   {role.name}
                 </Select.Option>
               ))}

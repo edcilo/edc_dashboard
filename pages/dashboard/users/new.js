@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Card, PageHeader } from "antd";
 import ssprops_user from "../../../helpers/ssprops_user";
 import DashboardLayout from "../../../layouts/DashboardLayout";
-import { UserForm } from "../../../components/Users";
+import { UserForm } from "@/components/User/Admin";
 import Role from "../../../services/role";
 import User from "../../../services/user";
 

@@ -1,21 +1,26 @@
 import styles from "./styles.module.css";
-import { useRouter } from "next/router";
-import { Card, Row, Col, Menu, PageHeader } from "antd";
+import { useRouter, NextRouter } from "next/router";
+import { Card, Row, Col, Menu } from "antd";
+import { ItemType, MenuInfo } from "rc-menu/lib/interface";
+import { ISettingsProps } from "@/interfaces/user";
+import urls from "@/config/urls";
 
-const items = [
+const items: ItemType[] = [
   { label: "Account", key: "account" },
   { label: "Password", key: "password" },
 ];
 
-const menuHandler = (item, router) => {
+const menuHandler = (item: MenuInfo, router: NextRouter): void => {
   if (item.key === "account") {
-    router.push("/dashboard/profile/account");
+    router.push(urls.settings);
   } else if (item.key === "password") {
-    router.push("/dashboard/profile/password");
+    router.push(urls.password);
   }
 };
 
-export default function AccountSettings({ user, children }) {
+export default function AccountSettings({
+  children,
+}: ISettingsProps): JSX.Element {
   const router = useRouter();
 
   return (

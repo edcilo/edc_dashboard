@@ -5,8 +5,7 @@ import { notification, PageHeader, Typography } from "antd";
 import ssprops_user from "../../../helpers/ssprops_user";
 import Account from "../../../services/account";
 import DashboardLayout from "../../../layouts/DashboardLayout";
-import AccountSettings from "../../../components/AccountSettings";
-import PasswordForm from "../../../components/UpdatePasswordForm";
+import { AccountSettings, PasswordForm } from "@/components/User/Profile";
 
 const successNotification = () => {
   notification.open({

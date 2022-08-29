@@ -3,12 +3,12 @@ import { useRouter } from "next/router";
 import { EditOutlined } from "@ant-design/icons";
 import { Button, Card, Descriptions, Space } from "antd";
 import urls from "@/config/urls";
-import { ProfileProps } from "./types";
+import { IProfileProps } from "@/interfaces/user";
 import ProfileBadge from "./ProfileBadge";
 import ProfileTitle from "./ProfileTitle";
 import profileItems from "./profileItems";
 
-export default function ProfileCard({ user }: ProfileProps): JSX.Element {
+export default function ProfileCard({ user }: IProfileProps): JSX.Element {
   const router = useRouter();
 
   return (

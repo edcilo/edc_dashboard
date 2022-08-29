@@ -1,7 +1,7 @@
 import ssprops_user from "../../../helpers/ssprops_user";
 import DashboardLayout from "../../../layouts/DashboardLayout";
 import User from "../../../services/user";
-import UsersTable from "../../../components/UsersTable";
+import UsersTable from "@/components/User/UsersTable";
 
 export default function UsersPage({ user, token, users }) {
   return (

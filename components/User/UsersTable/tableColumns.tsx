@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { format } from "date-fns";
+import { SortOrder } from "antd/lib/table/interface";
 import {
   EditFilled,
   EyeFilled,
@@ -7,21 +8,31 @@ import {
   CloseCircleFilled,
   SettingFilled,
 } from "@ant-design/icons";
-import { Button, Space } from "antd";
+import { Button, Space, TableColumnsType } from "antd";
+import { IUser } from "@/interfaces";
+import { IQueryParams } from "@/interfaces/user";
+import urls from "@/config/urls";
 
-const sortOrder = (column, order_column, order) => {
+const sortOrder = (
+  column: string,
+  order_column: string,
+  order: string
+): SortOrder => {
   const sort = order === "asc" ? "ascend" : "descend";
-  return order_column === column ? sort : false;
+  return order_column === column ? sort : null;
 };
 
-const getColumns = ({ order_column, order }) => [
+const getColumns = ({
+  order_column,
+  order,
+}: IQueryParams): TableColumnsType => [
   {
     title: "Name",
     dataIndex: "name",
     key: "name",
     sorter: true,
     sortOrder: sortOrder("name", order_column, order),
-    render: (_, item) => (
+    render: (_: string, item: IUser): JSX.Element => (
       <>
         {item.name} {item.lastname} {item.second_lastname}
       </>
@@ -46,7 +57,7 @@ const getColumns = ({ order_column, order }) => [
     dataIndex: "is_active",
     key: "is_active",
     align: "center",
-    render: (is_active) =>
+    render: (is_active: boolean): JSX.Element =>
       is_active ? <CheckCircleFilled /> : <CloseCircleFilled />,
   },
   {
@@ -56,19 +67,21 @@ const getColumns = ({ order_column, order }) => [
     sorter: true,
     sortOrder: sortOrder("created_at", order_column, order),
     align: "center",
-    render: (created_at) => format(new Date(created_at * 1000), "yyyy/MM/dd"),
+    render: (created_at: number): JSX.Element => (
+      <>{format(new Date(created_at * 1000), "yyyy/MM/dd")}</>
+    ),
   },
   {
     title: <SettingFilled />,
     dataIndex: "actions",
     key: "actions",
     align: "center",
-    render: (_, item) => (
+    render: (_: undefined, item: IUser): JSX.Element => (
       <Space>
-        <Link href={`/dashboard/users/${item.id}`}>
+        <Link href={urls.user.detail(item.id)}>
           <Button type="primary" href="" icon={<EyeFilled />} />
         </Link>
-        <Link href={`/dashboard/users/${item.id}/edit`}>
+        <Link href={urls.user.update(item.id)}>
           <Button className="warning" href="" icon={<EditFilled />} />
         </Link>
       </Space>

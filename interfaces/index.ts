@@ -1,3 +1,9 @@
+export interface IPayload {
+  id: string;
+  roles: string[];
+  exp: number;
+}
+
 export interface IRole {
   id: string;
   name: string;

@@ -5,9 +5,11 @@ import { notification, Divider, PageHeader, Typography } from "antd";
 import ssprops_user from "../../../helpers/ssprops_user";
 import Account from "../../../services/account";
 import DashboardLayout from "../../../layouts/DashboardLayout";
-import AccountSettings from "../../../components/AccountSettings";
-import AccountForm from "../../../components/AccountForm";
-import AuthForm from "../../../components/AuthForm";
+import {
+  AccountForm,
+  AccountSettings,
+  AuthForm,
+} from "@/components/User/Profile";
 
 const successNotification = () => {
   notification.open({
